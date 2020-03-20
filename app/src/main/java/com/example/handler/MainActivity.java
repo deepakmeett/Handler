@@ -1,6 +1,7 @@
 package com.example.handler;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -13,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText textView;
     Handler handler = new Handler();
-    Button button1, button2;
+    Button button1, button2, button3;
     ProgressBar progressBar;
     int sec = 1;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById( R.id.text );
         button1 = findViewById( R.id.bt1 );
         button2 = findViewById( R.id.bt2 );
+        button3 = findViewById( R.id.bt3 );
         progressBar = findViewById( R.id.progress_horizontal );
         button1.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -36,7 +38,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 handler.removeCallbacks( runnable );
             }
-        } ); }
+        } ); 
+        
+        button3.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, Main2Activity.class);
+                startActivity( intent );
+                
+            }
+        } );
+    
+    }
+        
         
     private Runnable runnable = new Runnable() {
         @Override
@@ -56,3 +70,4 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 }
+//https://github.com/deepakmeett/PaperFace.git
