@@ -13,9 +13,9 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     EditText textView;
-    Handler handler = new Handler();
     Button button1, button2, button3;
     ProgressBar progressBar;
+    Handler handler = new Handler();
     int sec = 1;
 
     @Override
@@ -45,13 +45,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent( MainActivity.this, Main2Activity.class);
                 startActivity( intent );
-                
             }
         } );
-    
     }
-        
-        
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
@@ -65,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText( "Time is completed" );
                 progressBar.setProgress( 0 );
                 Toast.makeText( MainActivity.this, "Progress is done", Toast.LENGTH_SHORT ).show();
-
             }
         }
     };
